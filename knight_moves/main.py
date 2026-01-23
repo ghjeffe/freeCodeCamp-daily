@@ -1,6 +1,6 @@
 import itertools
 
-def get_file_moves(position: str) -> list[str]:  # position = A1
+def get_file_moves(position: str) -> list[str]:  # example: position = A1
     '''
     Get a list of file (lateral) moves offset by 1 or 2 from the given position.
     
