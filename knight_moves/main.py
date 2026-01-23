@@ -1,6 +1,14 @@
 import itertools
 
 def get_file_moves(position: str) -> list[str]:  # position = A1
+    '''
+    Get a list of file (lateral) moves offset by 1 or 2 from the given position.
+    
+    :param position: single string representing chess position
+    :type position: str
+    :return: list of possible file moves
+    :rtype: list[str]
+    '''
     file, *_ = [char for char in position]
     file = file.upper()
     file_ordinal = ord(file)
@@ -20,7 +28,16 @@ def get_file_moves(position: str) -> list[str]:  # position = A1
 
     return file_moves
 
+
 def get_rank_moves(position: str) -> list[str]:  # position = A1
+    '''
+    Get a list of rank (vertical) moves offset by 1 or 2 from the given position.
+    
+    :param position: single string representing chess position
+    :type position: str
+    :return: list of possible rank moves
+    :rtype: list[str]
+    '''
     _, rank = position
     rank = int(rank)
     low_rank_limit = 1
@@ -40,7 +57,15 @@ def get_rank_moves(position: str) -> list[str]:  # position = A1
     return rank_moves
 
 
-def knight_moves(position):
+def knight_moves(position: str) -> int:
+    '''
+    Get a list of file (lateral) moves offset by 1 or 2 from the given position.
+    
+    :param position: single string representing chess position
+    :type position: str
+    :return: count of possible knight moves
+    :rtype: int
+    '''
     file, rank = [*position]
     file = file.upper()
     rank = int(rank)
@@ -68,5 +93,6 @@ def knight_moves(position):
 
     return len(moves)
 
+# Testing
 move_count = knight_moves('d4')
 print(move_count) 
